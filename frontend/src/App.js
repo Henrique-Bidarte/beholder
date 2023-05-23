@@ -1,6 +1,6 @@
-import styles from "./App.module.scss";
 import { Home } from "ui/screens";
 
+import styles from "./App.module.scss";
 import "ui/styles/globals.scss";
 
 function App() {

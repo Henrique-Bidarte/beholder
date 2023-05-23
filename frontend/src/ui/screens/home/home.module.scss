@@ -31,10 +31,13 @@
     color: $gray;
     line-height: 18px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 1px 1px 0px $white;
     background: none;
     border: outset 4px $gray;
-    animation: buttonDisplay 1000ms linear;
+    animation: buttonDisplay 300ms linear;
     animation-delay: 3000ms;
     animation-fill-mode: forwards;
     opacity: 0;

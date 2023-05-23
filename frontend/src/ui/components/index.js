@@ -1,1 +1,1 @@
-export * from "./close-button/close-button.component";
+export * from "./loader/loader.component";
