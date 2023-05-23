@@ -1,0 +1,79 @@
+@import "ui/styles/colors";
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-family: pixeled;
+    font-size: 64px;
+    text-shadow: 3px 3px 0px $white;
+    animation: titleDisplay 300ms linear;
+    animation-delay: 3000ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .beholder {
+    width: 500px;
+    animation: beholderIdle 2000ms infinite;
+  }
+
+  .connectButton {
+    height: 70px;
+    width: 200px;
+    font-family: pixeled;
+    font-size: 18px;
+    color: $gray;
+    line-height: 18px;
+    text-align: center;
+    box-shadow: 1px 1px 0px $white;
+    background: none;
+    border: outset 4px $gray;
+    animation: buttonDisplay 1000ms linear;
+    animation-delay: 3000ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transition: 200ms;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@keyframes titleDisplay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes beholderIdle {
+  0% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes buttonDisplay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

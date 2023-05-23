@@ -1,0 +1,35 @@
+@import "ui/styles/constants";
+@import "ui/styles/colors";
+
+.App {
+  height: $page_height;
+  width: $page_width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $black;
+  color: $gray;
+
+  .appContainer {
+    height: $app_container_height;
+    width: $app_container_width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: containerAnimation 3000ms linear;
+  }
+}
+
+@font-face {
+  font-family: "pixeled";
+  src: local("pixeled"), url(ui/assets/fonts/pixeled.ttf) format("truetype");
+}
+
+@keyframes containerAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
