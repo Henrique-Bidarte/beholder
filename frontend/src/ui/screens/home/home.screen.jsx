@@ -6,7 +6,14 @@ const Home = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Beholder</h1>
       <img className={styles.beholder} src={BeholderImage} />
-      <button className={styles.connectButton}>CONNECT</button>
+      <button
+        onClick={() => {
+          electron.notificationApi.sendNotification("Conectado");
+        }}
+        className={styles.connectButton}
+      >
+        CONNECT
+      </button>
     </div>
   );
 };
