@@ -1,0 +1,51 @@
+.beholder {
+  position: absolute;
+  top: 250px;
+  right: 350px;
+}
+
+.home {
+  width: 500px;
+  opacity: 0;
+  animation: homeTransition 2000ms linear, beholderIdle 2000ms infinite;
+  animation-fill-mode: forwards;
+}
+
+.menu {
+  width: 500px;
+  animation: menuTransition 2000ms ease, beholderIdle 2000ms infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes beholderIdle {
+  0% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes homeTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menuTransition {
+  20% {
+    top: 250px;
+    right: 350px;
+  }
+
+  100% {
+    top: 350px;
+    right: 60px;
+  }
+}

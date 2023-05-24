@@ -1,0 +1,53 @@
+@import "ui/styles/colors";
+
+.container {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  animation: menuTransition 300ms linear;
+  animation-delay: 2000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  .leftContainer {
+    border: outset 4px $gray;
+    border-radius: 15px;
+    height: 100%;
+    width: 49%;
+
+    .homeButton {
+      height: 40px;
+      width: 80px;
+      font-family: pixeled;
+      font-size: 12px;
+      color: $gray;
+      line-height: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      transition: 200ms;
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .rightContainer {
+    border: outset 4px $gray;
+    border-radius: 15px;
+    height: 40%;
+    width: 49%;
+  }
+}
+
+@keyframes menuTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,8 @@
+const EASE_TIMEOUT = {
+  EASE1: 1000,
+  EASE2: 2000,
+  EASE3: 3000,
+  EASE4: 4000,
+};
+
+export { EASE_TIMEOUT };

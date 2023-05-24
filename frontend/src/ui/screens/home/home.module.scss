@@ -7,20 +7,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 350px;
+  animation: homeTransition 300ms linear;
+  animation-delay: 2000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 
   .title {
     font-family: pixeled;
     font-size: 64px;
     text-shadow: 3px 3px 0px $white;
-    animation: titleDisplay 300ms linear;
-    animation-delay: 3000ms;
-    animation-fill-mode: forwards;
-    opacity: 0;
-  }
-
-  .beholder {
-    width: 500px;
-    animation: beholderIdle 2000ms infinite;
   }
 
   .connectButton {
@@ -30,49 +26,22 @@
     font-size: 18px;
     color: $gray;
     line-height: 18px;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 0px $white;
     background: none;
     border: outset 4px $gray;
-    animation: buttonDisplay 300ms linear;
-    animation-delay: 3000ms;
-    animation-fill-mode: forwards;
-    opacity: 0;
+    border-radius: 2px;
     transition: 200ms;
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.1);
       transform: translateY(-2px);
     }
   }
 }
 
-@keyframes titleDisplay {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes beholderIdle {
-  0% {
-    transform: translateY(-3px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-3px);
-  }
-}
-
-@keyframes buttonDisplay {
+@keyframes homeTransition {
   0% {
     opacity: 0;
   }

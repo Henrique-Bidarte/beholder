@@ -16,20 +16,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: containerAnimation 3000ms linear;
   }
 }
 
 @font-face {
   font-family: "pixeled";
   src: local("pixeled"), url(ui/assets/fonts/pixeled.ttf) format("truetype");
-}
-
-@keyframes containerAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
