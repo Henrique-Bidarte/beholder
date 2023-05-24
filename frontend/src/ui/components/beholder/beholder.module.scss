@@ -2,6 +2,7 @@
   position: absolute;
   top: 250px;
   right: 350px;
+  z-index: 999;
 }
 
 .home {
@@ -11,9 +12,9 @@
   animation-fill-mode: forwards;
 }
 
-.menu {
+.scan {
   width: 500px;
-  animation: menuTransition 2000ms ease, beholderIdle 2000ms infinite;
+  animation: scanTransition 2000ms ease, beholderIdle 2000ms infinite;
   animation-fill-mode: forwards;
 }
 
@@ -38,7 +39,7 @@
   }
 }
 
-@keyframes menuTransition {
+@keyframes scanTransition {
   20% {
     top: 250px;
     right: 350px;
@@ -46,6 +47,6 @@
 
   100% {
     top: 350px;
-    right: 60px;
+    right: 650px;
   }
 }

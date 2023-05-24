@@ -1,6 +1,6 @@
 const ROUTE = {
   HOME: "/",
-  MENU: "/menu",
+  SCAN: "/scan",
 };
 
 export { ROUTE };

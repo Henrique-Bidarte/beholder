@@ -38,6 +38,14 @@
       cursor: pointer;
       transform: translateY(-2px);
     }
+
+    &:disabled {
+      cursor: default;
+
+      &:hover {
+        transform: none;
+      }
+    }
   }
 }
 

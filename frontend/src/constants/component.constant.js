@@ -1,6 +1,6 @@
 const BEHOLDER_VARIATION = {
   HOME: "home",
-  MENU: "menu",
+  SCAN: "scan",
 };
 
 const LOADER_VARIATION = {
@@ -10,4 +10,10 @@ const LOADER_VARIATION = {
   LARGE: "large",
 };
 
-export { BEHOLDER_VARIATION, LOADER_VARIATION };
+const SCAN_TERMINAL_MESSAGE = {
+  TERMINAL_READY: "Terminal Ready",
+  SCANNING: "Scanning",
+  PINGING: "Pinging",
+};
+
+export { BEHOLDER_VARIATION, LOADER_VARIATION, SCAN_TERMINAL_MESSAGE };

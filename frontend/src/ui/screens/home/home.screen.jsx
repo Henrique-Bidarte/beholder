@@ -25,7 +25,7 @@ const HomeScreen = () => {
     if (serverStatus) {
       sendNotification(CONNECTION_NOTIFICATION.SUCCESS);
       setTimeout(() => {
-        navigate(ROUTE.MENU);
+        navigate(ROUTE.SCAN);
       }, EASE_TIMEOUT.EASE1);
     } else {
       sendNotification(CONNECTION_NOTIFICATION.FAIL);
@@ -39,9 +39,9 @@ const HomeScreen = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Beholder</h1>
         <button
-          disabled={loader}
-          onClick={handleConnectClick}
           className={styles.connectButton}
+          onClick={handleConnectClick}
+          disabled={loader}
         >
           {loader ? <Loader variation={LOADER_VARIATION.SMALL} /> : "CONNECT"}
         </button>

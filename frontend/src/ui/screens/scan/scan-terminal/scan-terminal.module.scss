@@ -1,0 +1,31 @@
+.container {
+  .terminal {
+    width: 100%;
+    overflow: auto;
+
+    .dot1 {
+      animation: dotSequence 1000ms ease-out infinite;
+      opacity: 0;
+    }
+    .dot2 {
+      animation: dotSequence 1000ms ease-out infinite;
+      animation-delay: 100ms;
+      opacity: 0;
+    }
+    .dot3 {
+      animation: dotSequence 1000ms ease-out infinite;
+      animation-delay: 200ms;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes dotSequence {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
