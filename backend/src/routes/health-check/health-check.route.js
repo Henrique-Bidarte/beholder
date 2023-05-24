@@ -1,3 +1,5 @@
+const { ROUTES } = require("../../constants");
+
 const healthCheck = (req, res) => {
   res.send({
     status: "OK",
@@ -5,7 +7,7 @@ const healthCheck = (req, res) => {
 };
 
 const createHealthRoutes = (app) => {
-  app.get("/healthcheck", healthCheck);
+  app.get(ROUTES.HEALTH_CHECK, healthCheck);
 };
 
 module.exports = {

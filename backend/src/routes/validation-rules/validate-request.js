@@ -11,6 +11,7 @@ const validateRequest = (req, res, next) => {
     next();
   }
 };
-module.export = {
-  createHealthRoutes,
+
+module.exports = {
+  validateRequest,
 };

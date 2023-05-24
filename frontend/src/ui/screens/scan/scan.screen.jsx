@@ -5,31 +5,38 @@ import { ROUTE } from "constants";
 import { ScanTerminal } from "./scan-terminal/scan-terminal.component";
 import { SCAN_TERMINAL_MESSAGE } from "constants";
 import { useState } from "react";
-import { EASE_TIMEOUT } from "constants";
 
 import styles from "./scan.module.scss";
+import { useNmapScan } from "hooks";
 
 const ScanScreen = () => {
+  const [inputValue, setInputValue] = useState("");
   const [processingMessage, setProcessingMessage] = useState("");
+  const [scanResult, setScanResult] = useState();
+
+  const { postNmapBaseScan } = useNmapScan();
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
     navigate(ROUTE.HOME);
   };
 
-  const handleScanClick = () => {
+  const handleScanClick = async () => {
+    setScanResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.SCANNING);
-
-    setTimeout(() => {
-      setProcessingMessage();
-    }, EASE_TIMEOUT.EASE4);
+    const scanResponse = await postNmapBaseScan({ domain: inputValue });
+    setScanResult(scanResponse);
+    setProcessingMessage();
   };
-  const handlePingClick = () => {
+  const handlePingClick = async () => {
+    setScanResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.PINGING);
-
-    setTimeout(() => {
-      setProcessingMessage();
-    }, EASE_TIMEOUT.EASE4);
+    const scanResponse = await postNmapBaseScan({ domain: inputValue });
+    setScanResult(scanResponse);
+    setProcessingMessage();
+  };
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
   };
   return (
     <>
@@ -47,19 +54,20 @@ const ScanScreen = () => {
               type="text"
               className={styles.formInput}
               placeholder="Insert Domain"
+              onChange={handleInputChange}
             />
             <div className={styles.formButtons}>
               <button
                 className={styles.formButton}
                 onClick={handleScanClick}
-                disabled={processingMessage}
+                disabled={!inputValue.length || processingMessage}
               >
                 Scan
               </button>
               <button
                 className={styles.formButton}
                 onClick={handlePingClick}
-                disabled={processingMessage}
+                disabled={!inputValue.length || processingMessage}
               >
                 Ping
               </button>
@@ -67,7 +75,10 @@ const ScanScreen = () => {
           </div>
         </div>
         <div className={styles.rightContainer}>
-          <ScanTerminal processingMessage={processingMessage} />
+          <ScanTerminal
+            processingMessage={processingMessage}
+            scanResult={scanResult}
+          />
         </div>
       </div>
     </>

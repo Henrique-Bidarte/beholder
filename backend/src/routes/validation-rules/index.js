@@ -1,1 +1,5 @@
-export * from "./validate-request";
+const { validateRequest } = require("./validate-request");
+
+module.exports = {
+  validateRequest,
+};
