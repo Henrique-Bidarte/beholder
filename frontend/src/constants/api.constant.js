@@ -3,6 +3,11 @@ const API_METHOD = {
   POST: "POST",
 };
 
+const API_ROUTES = {
+  NMAP_BASE_SCAN: "/scan",
+  NMAP_PING: "/scan/ping",
+};
+
 const API_URL = "http://localhost:3001/";
 
-export { API_METHOD, API_URL };
+export { API_METHOD, API_URL, API_ROUTES };

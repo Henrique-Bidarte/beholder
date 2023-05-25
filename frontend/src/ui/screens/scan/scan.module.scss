@@ -16,17 +16,18 @@
     height: 40%;
     width: 49%;
 
-    .navigation {
+    .utilsMenu {
       width: 100%;
+      display: flex;
+      justify-content: space-between;
 
-      .homeButton {
+      .utilsButton {
         height: 40px;
-        width: 80px;
         font-size: 12px;
         color: $gray;
         line-height: 12px;
+        padding: 0 20px;
         display: flex;
-        justify-content: center;
         align-items: center;
         background: none;
         transition: 200ms;

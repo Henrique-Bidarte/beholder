@@ -2,8 +2,12 @@ import { SCAN_TERMINAL_MESSAGE } from "constants";
 
 import styles from "./scan-terminal.module.scss";
 
-const ScanTerminal = ({ processingMessage, scanResult }) => {
-  const generateScanResult = (result) => {
+const ScanTerminal = ({ processingMessage, scanResult, pingResult }) => {
+  const validateScanResult = () => {
+    if (typeof scanResult === "string") return scanResult;
+    return scanResult.map((e) => renderScanResult(e));
+  };
+  const renderScanResult = (result) => {
     return (
       <>
         <p>{`Hostname: ${result.hostname}`}</p>
@@ -12,7 +16,7 @@ const ScanTerminal = ({ processingMessage, scanResult }) => {
         {result.openPorts.map((e) => {
           return (
             <>
-              <p>----</p>
+              <br />
               <p>{`Port: ${e.port}`}</p>
               <p>{`Protocol: ${e.protocol}`}</p>
               <p>{`Service: ${e.service}`}</p>
@@ -20,6 +24,21 @@ const ScanTerminal = ({ processingMessage, scanResult }) => {
             </>
           );
         })}
+        <p>----</p>
+      </>
+    );
+  };
+
+  const validadePingResult = () => {
+    if (typeof pingResult === "string") return pingResult;
+    return pingResult.map((e) => renderPingResult(e));
+  };
+  const renderPingResult = (result) => {
+    return (
+      <>
+        <p>{`Hostname: ${result.hostname}`}</p>
+        <p>{`Ip: ${result.ip}`}</p>
+        <p>----</p>
       </>
     );
   };
@@ -28,7 +47,7 @@ const ScanTerminal = ({ processingMessage, scanResult }) => {
     <>
       <div className={styles.container}>
         <div className={styles.terminal}>
-          {!processingMessage && !scanResult
+          {!processingMessage && !scanResult && !pingResult
             ? SCAN_TERMINAL_MESSAGE.TERMINAL_READY
             : null}
 
@@ -41,9 +60,8 @@ const ScanTerminal = ({ processingMessage, scanResult }) => {
             </>
           ) : null}
 
-          {scanResult ? (
-            <>{scanResult.map((e) => generateScanResult(e))}</>
-          ) : null}
+          {pingResult ? validadePingResult() : null}
+          {scanResult ? validateScanResult() : null}
         </div>
       </div>
     </>

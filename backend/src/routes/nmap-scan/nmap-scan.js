@@ -12,6 +12,12 @@ const createNmapScanRoutes = (app) => {
     useCase: nmapUseCase,
   });
 
+  post({
+    router: nmapScanRouter,
+    path: METHOD_ROUTES.NMAP_PING,
+    useCase: nmapUseCase,
+  });
+
   app.use(ROUTES.NMAP_SCAN, nmapScanRouter);
 };
 

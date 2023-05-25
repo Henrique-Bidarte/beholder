@@ -5,6 +5,7 @@ const ROUTES = {
 
 const METHOD_ROUTES = {
   NMAP_SCAN: "/",
+  NMAP_PING: "/ping",
 };
 
 module.exports = {
