@@ -1,12 +1,12 @@
-import { BeholderImage } from "ui/assets";
+import { BeholderDefaultImage, BeholderAgressiveImage } from "ui/assets";
 
 import styles from "./beholder.module.scss";
 
-const Beholder = ({ variation }) => {
+const Beholder = ({ variation, agressive }) => {
   return (
     <img
       className={`${styles.beholder} ${styles[variation]}`}
-      src={BeholderImage}
+      src={agressive ? BeholderAgressiveImage : BeholderDefaultImage}
     />
   );
 };

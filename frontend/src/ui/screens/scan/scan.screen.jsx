@@ -2,7 +2,7 @@ import { Beholder } from "ui/components";
 import { BEHOLDER_VARIATION } from "constants";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "constants";
-import { ScanTerminal } from "./scan-terminal/scan-terminal.component";
+import { ScanForm, ScanTerminal } from "./sections";
 import { SCAN_TERMINAL_MESSAGE } from "constants";
 import { useState } from "react";
 
@@ -13,91 +13,65 @@ const ScanScreen = () => {
   const [domain, setDomain] = useState("");
   const [processingMessage, setProcessingMessage] = useState("");
   const [scanResult, setScanResult] = useState();
-  const [pingResult, setPingResult] = useState();
+  const [agressive, setAgressive] = useState(false);
 
-  const { postNmapBaseScan, postNmapPing } = useNmapScan();
+  const { postNmapBaseScan, postNmapPing, postNmapAgressive } = useNmapScan();
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
     navigate(ROUTE.HOME);
   };
-  const handleClearClick = () => {
+  const handleClearTerminalClick = () => {
     setProcessingMessage();
     setScanResult();
-    setPingResult();
+  };
+
+  const handleDomainInputChange = (e) => {
+    setDomain(e.target.value.trim());
+  };
+
+  const handleAgressiveinputChange = (e) => {
+    setAgressive(e.target.checked);
   };
 
   const handleScanClick = async () => {
     setScanResult();
-    setPingResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.SCANNING);
-    const scanResponse = await postNmapBaseScan({ domain });
+    const scanResponse = agressive
+      ? await postNmapAgressive({ domain })
+      : await postNmapBaseScan({ domain });
     setScanResult(scanResponse);
     setProcessingMessage();
   };
   const handlePingClick = async () => {
     setScanResult();
-    setPingResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.PINGING);
     const pingResponse = await postNmapPing({ domain });
-    setPingResult(pingResponse);
+    setScanResult(pingResponse);
     setProcessingMessage();
-  };
-  const handleInputChange = (e) => {
-    setDomain(e.target.value.trim());
   };
   return (
     <>
-      <Beholder variation={BEHOLDER_VARIATION.SCAN} />
+      <Beholder variation={BEHOLDER_VARIATION.SCAN} agressive={agressive} />
       <div className={styles.container}>
         <div className={styles.leftContainer}>
-          <div className={styles.utilsMenu}>
-            <button
-              onClick={handleHomeClick}
-              className={styles.utilsButton}
-              disabled={processingMessage}
-            >
-              HOME
-            </button>
-            <button
-              onClick={handleClearClick}
-              className={styles.utilsButton}
-              disabled={!scanResult && !pingResult}
-            >
-              CLEAR TERMINAL
-            </button>
-          </div>
-          <div className={styles.form}>
-            Domain Scanner
-            <input
-              type="text"
-              className={styles.formInput}
-              placeholder="Insert Domain"
-              onChange={handleInputChange}
-            />
-            <div className={styles.formButtons}>
-              <button
-                className={styles.formButton}
-                onClick={handleScanClick}
-                disabled={!domain || processingMessage}
-              >
-                Scan
-              </button>
-              <button
-                className={styles.formButton}
-                onClick={handlePingClick}
-                disabled={!domain || processingMessage}
-              >
-                Ping
-              </button>
-            </div>
-          </div>
+          <ScanForm
+            handleHomeClick={handleHomeClick}
+            handleClearTerminalClick={handleClearTerminalClick}
+            handleScanClick={handleScanClick}
+            handlePingClick={handlePingClick}
+            handleDomainInputChange={handleDomainInputChange}
+            handleAgressiveinputChange={handleAgressiveinputChange}
+            processingMessage={processingMessage}
+            domain={domain}
+            scanResult={scanResult}
+            agressive={agressive}
+          />
         </div>
         <div className={styles.rightContainer}>
           <ScanTerminal
             processingMessage={processingMessage}
             scanResult={scanResult}
-            pingResult={pingResult}
           />
         </div>
       </div>

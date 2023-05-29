@@ -12,9 +12,14 @@ const useNmapScan = () => {
     return await post(API_ROUTES.NMAP_PING, payload);
   };
 
+  const postNmapAgressive = async (payload) => {
+    return await post(API_ROUTES.NMAP_AGRESSIVE, payload);
+  };
+
   return {
     postNmapBaseScan,
     postNmapPing,
+    postNmapAgressive,
   };
 };
 

@@ -6,6 +6,7 @@ const API_METHOD = {
 const API_ROUTES = {
   NMAP_BASE_SCAN: "/scan",
   NMAP_PING: "/scan/ping",
+  NMAP_AGRESSIVE: "/scan/agressive",
 };
 
 const API_URL = "http://localhost:3001/";
