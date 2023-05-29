@@ -49,6 +49,14 @@ input[type="checkbox"] {
   &:hover {
     cursor: pointer;
   }
+
+  &:disabled {
+    filter: brightness(0.5);
+
+    &:hover {
+      cursor: default;
+    }
+  }
 }
 
 input[type="checkbox"]::before {

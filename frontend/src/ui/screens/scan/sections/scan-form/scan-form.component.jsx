@@ -43,6 +43,7 @@ const ScanForm = ({
             type="checkbox"
             value={agressive}
             onChange={handleAgressiveinputChange}
+            disabled={processingMessage}
           />
           Agressive Scan
         </div>
