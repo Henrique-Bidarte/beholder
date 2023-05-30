@@ -12,7 +12,7 @@ The purpose of this project is exclusively to help software development and act 
 
 ---
 
-To run this project, it is necessary to install NMAP on the system. This is an official network and systems mapping tool. Download the appropriate version and model of the tool can be found at the following Link
+To run this project, it is necessary to install NMAP on the system. This is an official network and systems mapping tool. Download the appropriate version and model of the tool at the following Link
 
 - https://nmap.org/download.html
 
