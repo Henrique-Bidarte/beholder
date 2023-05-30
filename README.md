@@ -29,3 +29,15 @@ Technologies introduced:
 - Electron
 - Node Express
 - Nmap
+
+---
+Info
+
+![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/0bd79d1d-ca19-4c37-9670-6d7c22730a89)
+
+
+![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/c47f60fb-83c9-4553-9531-5381d7d35821)
+
+Loudness measurement serves to determine the level of attention to be drawn to the Scanner. Higher levels make it easier for the target to detect the Scanner's action. Lower levels are more cautious, but tend to take exponentially longer.
+
+The Aggressive Scanner tag determines a type of action that executes actions and scripts on the target, in order to reveal sensitive information such as the Operating System where the Domain operates. It is a noisy action and can cause instability in targets hosted on fragile systems, but it can also use Loudness settings, although they are not as efficient.
