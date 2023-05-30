@@ -33,7 +33,7 @@ Technologies introduced:
 ---
 Info
 
-![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/0bd79d1d-ca19-4c37-9670-6d7c22730a89)
+![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/79fab28d-a379-43fb-8f89-225acc50b58a)
 
 
 ![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/c47f60fb-83c9-4553-9531-5381d7d35821)
