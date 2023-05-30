@@ -1,18 +1,23 @@
-import { Beholder } from "ui/components";
-import { BEHOLDER_VARIATION } from "constants";
-import { useNavigate } from "react-router-dom";
-import { ROUTE } from "constants";
-import { ScanForm, ScanTerminal } from "./sections";
-import { SCAN_TERMINAL_MESSAGE } from "constants";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useNmapScan } from "hooks";
+import {
+  ROUTE,
+  LOUDNESS_LEVEL,
+  DEFAULT_LOUDNESS_LEVEL,
+  BEHOLDER_VARIATION,
+  SCAN_TERMINAL_MESSAGE,
+} from "constants";
+import { Beholder } from "ui/components";
+import { ScanForm, ScanTerminal } from "./sections";
 
 import styles from "./scan.module.scss";
-import { useNmapScan } from "hooks";
 
 const ScanScreen = () => {
-  const [domain, setDomain] = useState("");
-  const [processingMessage, setProcessingMessage] = useState("");
+  const [domain, setDomain] = useState();
+  const [processingMessage, setProcessingMessage] = useState();
   const [scanResult, setScanResult] = useState();
+  const [loudness, setLoudness] = useState(DEFAULT_LOUDNESS_LEVEL);
   const [agressive, setAgressive] = useState(false);
 
   const { postNmapBaseScan, postNmapPing, postNmapAgressive } = useNmapScan();
@@ -30,6 +35,10 @@ const ScanScreen = () => {
     setDomain(e.target.value.trim());
   };
 
+  const handleLoudnessInputChange = (e) => {
+    setLoudness(e.target.value);
+  };
+
   const handleAgressiveinputChange = (e) => {
     setAgressive(e.target.checked);
   };
@@ -38,21 +47,28 @@ const ScanScreen = () => {
     setScanResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.SCANNING);
     const scanResponse = agressive
-      ? await postNmapAgressive({ domain })
-      : await postNmapBaseScan({ domain });
+      ? await postNmapAgressive({ domain, loudness: LOUDNESS_LEVEL[loudness] })
+      : await postNmapBaseScan({ domain, loudness: LOUDNESS_LEVEL[loudness] });
     setScanResult(scanResponse);
     setProcessingMessage();
   };
   const handlePingClick = async () => {
     setScanResult();
     setProcessingMessage(SCAN_TERMINAL_MESSAGE.PINGING);
-    const pingResponse = await postNmapPing({ domain });
+    const pingResponse = await postNmapPing({
+      domain,
+      loudness: LOUDNESS_LEVEL[loudness],
+    });
     setScanResult(pingResponse);
     setProcessingMessage();
   };
   return (
     <>
-      <Beholder variation={BEHOLDER_VARIATION.SCAN} agressive={agressive} />
+      <Beholder
+        variation={BEHOLDER_VARIATION.SCAN}
+        agressive={agressive}
+        loudness={loudness}
+      />
       <div className={styles.container}>
         <div className={styles.leftContainer}>
           <ScanForm
@@ -61,10 +77,12 @@ const ScanScreen = () => {
             handleScanClick={handleScanClick}
             handlePingClick={handlePingClick}
             handleDomainInputChange={handleDomainInputChange}
+            handleLoudnessInputChange={handleLoudnessInputChange}
             handleAgressiveinputChange={handleAgressiveinputChange}
             processingMessage={processingMessage}
             domain={domain}
             scanResult={scanResult}
+            loudness={loudness}
             agressive={agressive}
           />
         </div>

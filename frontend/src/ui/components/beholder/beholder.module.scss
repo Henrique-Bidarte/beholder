@@ -18,6 +18,25 @@
   animation-fill-mode: forwards;
 }
 
+.loudnessZero {
+  filter: contrast(2);
+}
+.loudnessOne {
+  filter: contrast(1.8);
+}
+.loudnessTwo {
+  filter: contrast(1.6);
+}
+.loudnessThree {
+  filter: contrast(1.4);
+}
+.loudnessFour {
+  filter: contrast(1.2);
+}
+.loudnessFive {
+  filter: contrast(1);
+}
+
 @keyframes beholderIdle {
   0% {
     transform: translateY(-3px);

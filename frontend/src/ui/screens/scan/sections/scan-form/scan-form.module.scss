@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 
   .formDomainInput {
     height: 60px;
@@ -43,11 +43,23 @@
     border-radius: 5px;
   }
 
-  .agressiveForm {
-    height: 60px;
+  .loudnessForm {
+    height: 40px;
     width: 380px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 20px;
+    gap: 15px;
+  }
+
+  .agressiveForm {
+    height: 50px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 20px;
     line-height: 20px;
     gap: 15px;

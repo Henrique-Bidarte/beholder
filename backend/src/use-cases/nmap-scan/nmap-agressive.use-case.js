@@ -1,8 +1,8 @@
 const nmap = require("node-nmap");
 
-const nmapAgressiveUseCase = async ({ domain }) => {
+const nmapAgressiveUseCase = async ({ domain, loudness }) => {
   nmap.nmapLocation = "nmap";
-  const nmapScan = new nmap.NmapScan(`-A ${domain}`);
+  const nmapScan = new nmap.NmapScan(`-A ${loudness} ${domain}`);
 
   nmapScan.startScan();
 

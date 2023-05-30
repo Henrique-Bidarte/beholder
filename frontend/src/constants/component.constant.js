@@ -3,6 +3,15 @@ const BEHOLDER_VARIATION = {
   SCAN: "scan",
 };
 
+const BEHOLDER_LOUDNESS_VARIATION = {
+  0: "loudnessZero",
+  1: "loudnessOne",
+  2: "loudnessTwo",
+  3: "loudnessThree",
+  4: "loudnessFour",
+  5: "loudnessFive",
+};
+
 const LOADER_VARIATION = {
   TINY: "tiny",
   SMALL: "small",
@@ -16,4 +25,9 @@ const SCAN_TERMINAL_MESSAGE = {
   PINGING: "Pinging",
 };
 
-export { BEHOLDER_VARIATION, LOADER_VARIATION, SCAN_TERMINAL_MESSAGE };
+export {
+  BEHOLDER_VARIATION,
+  BEHOLDER_LOUDNESS_VARIATION,
+  LOADER_VARIATION,
+  SCAN_TERMINAL_MESSAGE,
+};
