@@ -27,6 +27,7 @@ Technologies introduced:
 
 - React
 - Electron
+- Sass
 - Node Express
 - Nmap
 
