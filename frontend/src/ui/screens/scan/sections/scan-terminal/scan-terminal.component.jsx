@@ -9,29 +9,30 @@ const ScanTerminal = ({ processingMessage, scanResult }) => {
   };
   const renderScanResult = (result) => {
     return (
-      <>
+      <div key={result.ip}>
         <p>{`Hostname: ${result.hostname}`}</p>
         <p>{`Ip: ${result.ip}`}</p>
 
         <p>{result.mac ? `Mac: ${result.mac}` : null}</p>
-        <p>{result.openPorts ? `Open Ports` : null}</p>
-        {result.openPorts
+        <p>{result.osNmap ? `Os: ${result.osNmap}` : null}</p>
+        <br />
+        <p>{result.openPorts?.length ? `Open Ports:` : null}</p>
+        {result.openPorts?.length
           ? result.openPorts.map((e) => {
               return (
-                <>
+                <div key={e.port}>
                   <br />
                   <p>{`Port: ${e.port}`}</p>
                   <p>{`Protocol: ${e.protocol}`}</p>
                   <p>{`Service: ${e.service}`}</p>
                   <p>{`Method: ${e.method}`}</p>
-                </>
+                </div>
               );
             })
           : null}
         <br />
-        <p>{result.osNmap ? `Os: ${result.osNmap}` : null}</p>
         <p>----</p>
-      </>
+      </div>
     );
   };
 
