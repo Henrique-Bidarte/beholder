@@ -31,7 +31,6 @@ Technologies introduced:
 - Nmap
 
 ---
-Info
 
 ![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/79fab28d-a379-43fb-8f89-225acc50b58a)
 
