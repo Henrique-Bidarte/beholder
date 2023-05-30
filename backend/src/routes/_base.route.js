@@ -34,32 +34,6 @@ const get = ({
   );
 };
 
-const put = ({
-  router,
-  path,
-  requestValidationRules = () => [],
-  useCase,
-  responseMapper = (result) => result,
-}) => {
-  router.put(
-    path,
-    requestValidationRules(),
-    validateRequest,
-    async (req, res, next) => {
-      try {
-        const result = await execUseCase(req, useCase);
-        if (result) {
-          return res.status(201).json(responseMapper(result));
-        } else {
-          return res.sendStatus(404);
-        }
-      } catch (err) {
-        next(err);
-      }
-    }
-  );
-};
-
 const post = ({
   router,
   path,
@@ -88,6 +62,5 @@ const post = ({
 
 module.exports = {
   get,
-  put,
   post,
 };
