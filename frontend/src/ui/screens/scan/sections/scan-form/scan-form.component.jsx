@@ -42,25 +42,28 @@ const ScanForm = ({
           onChange={handleDomainInputChange}
         />
         <div className={styles.loudnessForm}>
-          Loudness
-          <input
-            type="range"
-            min={MIN_LOUDNESS_LEVEL}
-            max={MAX_LOUDNESS_LEVEL}
-            value={loudness}
-            onChange={handleLoudnessInputChange}
-            disabled={processingMessage}
-          />
-          {loudness}
+          <div className={styles.loudnessText}>Loudness Level</div>
+          <div className={styles.loudnessInput}>
+            <input
+              type="range"
+              min={MIN_LOUDNESS_LEVEL}
+              max={MAX_LOUDNESS_LEVEL}
+              value={loudness}
+              onChange={handleLoudnessInputChange}
+              disabled={processingMessage}
+            />
+          </div>
         </div>
         <div className={styles.agressiveForm}>
-          Agressive Scan
-          <input
-            type="checkbox"
-            value={agressive}
-            onChange={handleAgressiveinputChange}
-            disabled={processingMessage}
-          />
+          <div className={styles.agressiveText}>Agressive Scan</div>
+          <div className={styles.agressiveInput}>
+            <input
+              type="checkbox"
+              value={agressive}
+              onChange={handleAgressiveinputChange}
+              disabled={processingMessage}
+            />
+          </div>
         </div>
         <div className={styles.formButtons}>
           <button
