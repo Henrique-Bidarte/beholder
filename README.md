@@ -1,8 +1,6 @@
 
 # beholder
 
-![beholder-pixel-art](https://github.com/Henrique-Bidarte/beholder/assets/134324510/7d7acfe5-e267-4d60-8dd1-3b0f13c6b249)
-
 Project Beholder. Domain scanner
 
 Beholder is an application made as a hobby in order to create a simple and useful tool to be used during the development of other projects and tasks in the area of ​​software development.
