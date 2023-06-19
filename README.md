@@ -7,8 +7,6 @@ Beholder is an application made as a hobby in order to create a simple and usefu
 
 The application works as a Domain Scanner in order to find vulnerabilities, open ports and leakage of sensitive information. In addition to serving as a test method for detecting and alerting scans or intrusion attempts.
 
-The plans for the future of the application are to implement new tools and new methods for tests, invasions and analysis of systems, networks and domains.
-
 The purpose of this project is exclusively to help software development and act as a tool to develop security mechanisms for personal or corporate projects.
 
 ---
@@ -27,11 +25,11 @@ Technologies introduced:
 
 - React
 - Electron
+- Sass
 - Node Express
 - Nmap
 
 ---
-Info
 
 ![image](https://github.com/Henrique-Bidarte/beholder/assets/134324510/79fab28d-a379-43fb-8f89-225acc50b58a)
 
