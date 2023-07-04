@@ -38,7 +38,7 @@ Technologies introduced:
 
 - Loudness measurement serves to determine the level of attention to be drawn to the Scanner. Higher levels make it easier for the target to detect the Scanner's action. Lower levels are more cautious, but tend to take exponentially longer.
 
-- The Aggressive Scan tag determines a type of action that executes methods and scripts on the target in order to reveal sensitive information such as the Operating System where the Domain operates. It is a noisy action and can cause instability in targets hosted on fragile systems, but it can also use Loudness settings, although they are not as efficient.
+- The Aggressive Scan tag determines a type of action that executes methods and scripts on the target in order to reveal sensitive information such as the Operating System where the Domain operates. It is a noisy action and can cause instability in targets hosted on fragile systems. It can also use Loudness settings, although they are not as efficient.
 
 ---
 
