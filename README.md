@@ -1,8 +1,6 @@
 
 # beholder
 
-Project Beholder. Domain scanner
-
 Beholder is an application made as a hobby in order to create a simple and useful tool to be used during the development of other projects and tasks in the area of ​​software development.
 
 The application works as a Domain Scanner in order to find vulnerabilities, open ports and leakage of sensitive information. In addition to serving as a test method for detecting and alerting scans or intrusion attempts.
