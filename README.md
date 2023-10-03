@@ -1,11 +1,9 @@
 
 # beholder
 
-Beholder is an application made as a hobby in order to create a simple and useful tool to be used during the development of other projects and tasks in the area of ​​software development.
+Beholder is an application made as a hobby. It serves as an Nmap scanner application, abstracting the terminal into an interface
 
-The application works as a Domain Scanner in order to find vulnerabilities, open ports and leakage of sensitive information. In addition to serving as a test method for detecting and alerting scans or intrusion attempts.
-
-The purpose of this project is exclusively to help software development and act as a tool to develop security mechanisms for personal or corporate projects.
+The main purpose of this repository is to have FrontEnd and BackEnd sample projects in Node and React, along with their respective architectures, for a simplified and convenient personal use. Furthermore, cool interfaces and methods were implemented so that the flow could be visualized within the proposed architecture, in addition to being able to be modified at will with relative ease.
 
 ---
 
