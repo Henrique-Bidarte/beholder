@@ -11,7 +11,7 @@ To run this project, it is necessary to install NMAP on the system. This is an o
 
 - https://nmap.org/download.html
 
-Afterwards, the command 'npm install' or similar must be run in both FrontEnd and BackEnd projects.
+Afterwards, the command 'npm install' or similar must be executed in both FrontEnd and BackEnd projects.
 
 Having everything installed, it is possible to run the application with the executable files 'beholder-server-exe' and 'beholder-client-exe' available in the project files.
 
